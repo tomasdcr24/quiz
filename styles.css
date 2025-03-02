@@ -1,0 +1,416 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: burlywood;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  visibility: visible !important;
+}
+
+.start-screen {
+  position: relative;
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.num-questions {
+  padding: 10px 20px;
+  background-color: burlywood;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.num-questions:hover,
+.start-btn:hover {
+  background-color: black;
+}
+
+.quiz {
+  width: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: white;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.question-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+}
+
+#clock-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#clock-icon {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+#clock {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#current-question {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subject {
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.question {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.answer-buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btn {
+  text-align: left;
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid burlywood;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.btn:hover:not([disabled]) {
+  background-color: burlywood;
+  color: white;
+}
+
+.btn:disabled:not(.correct, .incorrect) {
+  color: grey;
+  border-color: grey;
+}
+
+.next-btn {
+  align-self: flex-end;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: burlywood;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.next-btn:hover:not([disabled]) {
+  background-color: black;
+  color: white;
+}
+
+.next-btn:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.correct {
+  background-color: lightgreen;
+  border-color: green;
+  color: black;
+}
+
+.incorrect {
+  background-color: pink;
+  border-color: red;
+  color: black;
+}
+
+hr {
+  margin: 10px 0;
+  border: 1px solid burlywood;
+}
+
+.result-screen {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.result-screen h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.result-screen p {
+  font-size: 1.2rem;
+  margin: 10px 0 20px 0;
+}
+
+.restart-btn {
+  padding: 10px 20px;
+  background-color: burlywood;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.restart-btn:hover {
+  background-color: black;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+button:not(.flip-btn) {
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button:hover:not(:disabled, .flip-btn) {
+  transform: scale(1.02);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+button:active:not(:disabled, .flip-btn) {
+  transform: scale(0.98);
+}
+
+progress {
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+progress::-webkit-progress-bar {
+  background-color: lightgray;
+}
+
+progress::-webkit-progress-value {
+  background-color: burlywood;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .start-screen,
+  .quiz,
+  .result-screen {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .question-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  #current-question {
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  #clock-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .answer-buttons {
+    gap: 8px;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  .num-questions,
+  .btn,
+  .next-btn,
+  .restart-btn {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+
+  .quiz {
+    width: 95%;
+  }
+
+  .question-header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.flip-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -0.1vh;
+  margin-right: -0.1vw;
+  transition: all 0.5s ease-in-out;
+}
+
+.flip-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, lightgrey, white);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.flip-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: burlywood;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.flip-btn:hover {
+  width: 30px;
+  height: 30px;
+}
+
+.flip-btn.flipped::before {
+  background: linear-gradient(to bottom right, white, lightgrey);
+}
+
+.subjects {
+  text-align: left;
+  margin-left: 20px;
+  display: block;
+}
+
+.subjects label {
+  display: block;
+}
+
+.subjects input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#percentage-correct {
+  font-size: 3rem;
+  margin: 0;
+}

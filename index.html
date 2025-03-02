@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Made with love" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miss Claire | Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="images/icon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="start-screen">
+      <h1 class="title">Welcome to the Quiz!</h1>
+      <p class="welcome-message">Select the number of questions:</p>
+      <div class="options">
+        <button class="num-questions" data-value="50">50</button>
+        <button class="num-questions" data-value="100">100</button>
+        <button class="num-questions" data-value="150">150</button>
+      </div>
+      <div class="subjects hidden"></div>
+      <button class="flip-btn"></button>
+    </div>
+    <div class="quiz hidden">
+      <div class="question-info">
+        <div class="question-header">
+          <span id="current-question">1 of 10</span>
+          <span id="clock-container">
+            <i class="fas fa-clock" id="clock-icon"></i>
+            <span id="clock">0:00</span>
+          </span>
+        </div>
+        <h2 class="subject" id="subject">Subject</h2>
+      </div>
+      <progress id="progress-bar" value="0" max="100"></progress>
+      <h3 class="question" id="question">Question?</h3>
+      <div class="answer-buttons" id="answer-buttons"></div>
+      <button class="next-btn">Next</button>
+    </div>
+    <div class="result-screen hidden">
+      <h2>Your Results</h2>
+      <h1 id="percentage-correct"></h1>
+      <p>
+        You got <span id="score"></span> out of
+        <span id="total-questions"></span> questions correct!
+      </p>
+      <p><i class="fas fa-clock"></i> <span id="time-taken"></span></p>
+      <button class="restart-btn">Restart Quiz</button>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
